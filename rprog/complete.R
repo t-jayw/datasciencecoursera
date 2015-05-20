@@ -28,7 +28,7 @@ complete <- function(directory, id = 3:12){
     file_name <- longifyNumber(i)
     file_path <- constructPath(file_name, directory = directory)
     file <- read.csv(file_path)
-    nobs <- length(complete.cases(file))
+    nobs <- sum(complete.cases(file))
     df[i,] <- c(id, nobs)
   }
   return df
