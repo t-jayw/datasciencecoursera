@@ -1,18 +1,4 @@
-longifyNumber <- function(number, min_char = 3){
-  if(nchar(number) < min_char){
-    needed <- min_char - nchar(number)
-    padding <- paste(rep(0,needed), collapse = "")
-    longNumber <- paste(padding, number, sep = "")
-    return(longNumber)
-  }
-  else{
-    return(number)
-  }
-}
-
-constructPath <- function(filename, file_type = '.csv', directory){
-  return(paste(directory,"/",filename,file_type, sep = ""))
-}
+source("assignment1utils.R")
 
 pollutantmean <- function(directory, pollutant, id = 3:12){
   file_range <- sapply(id, longifyNumber)
