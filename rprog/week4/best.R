@@ -13,8 +13,7 @@ best <- function(state, outcome) {
   outcome_col <- switch(outcome, 
            "heart attack" = "Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack",
            "heart failure" = "Hospital.30.Day.Death..Mortality..Rates.from.Heart.Failure",
-           "pneumonia" = "Hospital.30.Day.Death..Mortality..Rates.from.Pneumonia",
-           "invalid outcome")
+           "pneumonia" = "Hospital.30.Day.Death..Mortality..Rates.from.Pneumonia")
   
   # Isolate state/outcome data into new DF
   state_df <- outcome_df[outcome_df$State == state, c("State","Hospital.Name",outcome_col)]
